@@ -135,3 +135,21 @@ set obj [get_runs impl_1]
 current_run -implementation [get_runs impl_1]
 
 puts "INFO: Project created:pure_hdl_project1"
+
+#################################################################################
+
+# DOWN HERE: to be tested:
+
+#################################################################################
+
+# start the synthesis flow
+launch_runs synth_1 -jobs 8
+puts "INFO: Synthesis synth_1 completed"
+
+# start the implementation flow
+launch_runs impl_1 -jobs 8
+puts "INFO: Implementation impl_1 completed"
+
+# create bitstream
+write_bitstream design1.bit
+puts "INFO: Generation of bitstream completed"
